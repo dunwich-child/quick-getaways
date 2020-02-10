@@ -1,0 +1,143 @@
+/* ==================== */
+/* GLOBAL STYLES        */
+/* ==================== */
+
+:root {
+  --white: #fff;
+  --black: #000;
+  --orange: #ff9f1a;
+  --black-pearl: ##1e272e;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  color: #1e272e;
+}
+
+h1 {
+  font-size: 3.6rem;
+  font-family: "Playfair Display", serif;
+}
+
+h2 {
+  font-size: 7rem;
+  font-family: "Playfair Display", serif;
+}
+
+h3 {
+  font-size: 3rem;
+  font-family: "Assistant", sans-serif;
+}
+
+h4,
+h5 {
+  font-size: 2.8rem;
+}
+
+button {
+  font-size: 1.8rem;
+}
+
+li,
+label,
+input,
+p {
+  font-size: 2rem;
+  font-family: "Assistant", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black-pearl);
+}
+
+a:hover {
+  color: var(--orange);
+}
+
+button {
+  padding: 2rem 6rem;
+  border: none;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.orange-text {
+  color: var(--orange);
+}
+
+/* ==================== */
+/* NAV STYLES           */
+/* ==================== */
+
+.main-header {
+  border-bottom: 0.5px solid var(--black);
+}
+
+.main-header nav {
+  min-height: 8vh;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: auto;
+  padding: 2rem;
+  align-items: center;
+}
+
+.main-header nav ul {
+  display: flex;
+  flex: 1 1 40rem;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.logo {
+  flex: 3 1 40rem;
+}
+
+/* ==================== */
+/* HERO STYLES          */
+/* ==================== */
+
+.hero {
+  min-height: 92vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.6),
+      transparent
+    ),
+    url("/quick-getaways/images/landing-page.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hero h2 {
+  letter-spacing: 0.3rem;
+}
+
+.hero h3 {
+  font-weight: 400;
+  letter-spacing: 0.4rem;
+  padding: 1.6rem;
+  text-transform: uppercase;
+}
+
+.hero button {
+  margin-top: 4rem;
+  border-radius: 5rem;
+}
