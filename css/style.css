@@ -1,12 +1,11 @@
-/* ==================== */
-/* GLOBAL STYLES        */
-/* ==================== */
+/* GLOBAL STYLES  */
 
 :root {
   --white: #fff;
   --black: #000;
-  --orange: #ff9f1a;
+  --orange: #e58e26;
   --black-pearl: ##1e272e;
+  --font-size-10: 62.5%;
 }
 
 * {
@@ -16,28 +15,31 @@
 }
 
 html {
-  font-size: 62.5%;
-  color: #1e272e;
+  font-size: var(--font-size-10);
+  color: var(--black-pearl);
 }
 
 h1 {
-  font-size: 3.6rem;
+  font-size: 4rem;
   font-family: "Playfair Display", serif;
 }
 
 h2 {
-  font-size: 7rem;
+  font-size: 3.2rem;
   font-family: "Playfair Display", serif;
 }
 
 h3 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-family: "Assistant", sans-serif;
 }
 
-h4,
+h4 {
+  font-size: 2.4rem;
+}
+
 h5 {
-  font-size: 2.8rem;
+  font-size: 2rem;
 }
 
 button {
@@ -68,22 +70,25 @@ button {
   color: var(--white);
   font-size: 1.8rem;
   cursor: pointer;
+  transition: background 0.5s ease-in-out;
+}
+
+button:hover {
+  background: #fa983a;
 }
 
 .orange-text {
   color: var(--orange);
 }
 
-/* ==================== */
-/* NAV STYLES           */
-/* ==================== */
+/* NAV STYLES */
 
-.main-header {
+#main-header {
   border-bottom: 0.5px solid var(--black);
 }
 
-.main-header nav {
-  min-height: 8vh;
+#main-header nav {
+  min-height: 10vh;
   display: flex;
   flex-wrap: wrap;
   width: 90%;
@@ -92,7 +97,7 @@ button {
   align-items: center;
 }
 
-.main-header nav ul {
+#main-header nav ul {
   display: flex;
   flex: 1 1 40rem;
   justify-content: space-around;
@@ -103,17 +108,11 @@ button {
   flex: 3 1 40rem;
 }
 
-/* ==================== */
-/* HERO STYLES          */
-/* ==================== */
+/* HERO STYLES */
 
 .hero {
-  min-height: 92vh;
-  background: linear-gradient(
-      rgba(0, 0, 0, 0.6),
-      rgba(0, 0, 0, 0.6),
-      transparent
-    ),
+  min-height: 90vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), transparent),
     url("/quick-getaways/images/landing-page.jpg");
   background-size: cover;
   background-position: center;
@@ -134,10 +133,102 @@ button {
   font-weight: 400;
   letter-spacing: 0.4rem;
   padding: 1.6rem;
-  text-transform: uppercase;
 }
 
 .hero button {
   margin-top: 4rem;
   border-radius: 5rem;
+}
+
+/* BENEFITS STYLES  */
+
+#benefits {
+  min-height: 100vh;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), transparent),
+    url("/quick-getaways/images/new-york-page.png");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.benefits-header {
+  width: 90%;
+  margin: auto;
+}
+
+.benefits-header h2 {
+  padding: 1rem 0;
+  text-decoration: underline;
+}
+
+.benefits-header h3 {
+  padding: 2rem 0;
+  font-weight: 400;
+}
+
+.cloud {
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+
+.moving-cloud-1 {
+  animation: cloudAnimation 3s infinite alternate ease-in-out;
+}
+
+.moving-cloud-2 {
+  top: 20%;
+  z-index: -1;
+  opacity: 0.5;
+  animation: cloudAnimation 3.2s infinite alternate ease-in-out;
+}
+
+@keyframes cloudAnimation {
+  from {
+    transform: translate(10%, -10%);
+  }
+
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 960px) {
+  nav {
+    text-align: center;
+  }
+
+  html {
+    font-size: 50%;
+  }
+
+  h1 {
+    font-size: 4.5rem;
+  }
+
+  .logo {
+    padding: 4rem;
+  }
+
+  .cloud {
+    height: 40rem;
+  }
+
+  .moving-cloud-1 {
+    z-index: -1;
+  }
+
+  .moving-cloud-2 {
+    z-index: -2;
+  }
+
+  .benefits-header h3 {
+    background: rgba(229, 142, 38, 0.7);
+    padding: 1rem;
+  }
 }
